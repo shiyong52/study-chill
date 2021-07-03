@@ -1,0 +1,157 @@
+
+        /* Light Mode Button Styles
+        --------------------------- */ 
+
+        .light-mode-button {
+            background:0;
+            border: 0;
+            box-sizing: border-box;
+            cursor: pointer;
+            height: 20px;
+            width: 50px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0);
+        }
+
+        .light-mode-button:focus {
+            outline:none; /* Not ideal for accessibility */
+        }
+
+        .light-mode-button span:nth-child(1) {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 50px;
+            height:20px;
+            border-radius: 20px;
+            background-color: #d6d7db;
+            box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+            transition: .3s;
+        }
+
+        .light-mode-button span:nth-child(2) {
+            position: absolute;
+            top:0px;
+            left:0px;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+            transition: .3s;
+        }
+		
+		/* Light & Dark Mode Styles
+--------------------------- */ 
+
+body {
+    background-color: #F0F8FF;
+    transition: background-color .3s;
+	 font-family: 'Abel';font-size: 18px;
+	 padding-left:60px;
+}
+h1{
+	font-size:48px;
+	font-family: 'Sedgwick Ave Display', cursive;
+}
+body[light-mode=dark] {
+    background-color: #141516;
+    color: #ced4e2;
+}
+
+body[light-mode="dark"] .light-mode-button span:nth-child(1){
+    background-color: #ced4e2;
+    color: #141516;
+}
+
+body[light-mode=dark] .light-mode-button span:nth-child(2) {
+    left: 30px;
+    background-color: #141516;
+}
+
+
+
+iframe{float:left}
+#container{
+  width:400px;
+  margin:20px auto;
+  padding:20px;
+  text-align:center;
+  background : transparent;
+  
+}
+
+#timer{ 
+  color:#141516 ; 
+  font-size:50px; 
+  margin:10px auto;
+  border : 5px solid #141516 ;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  position:relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor:default;
+}
+
+.dark-mode #timer{
+  color:#ced4e2 ; 
+  font-size:50px; 
+  margin:10px auto;
+  border : 5px solid #ced4e2 ;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  position:relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor:default;
+}
+#time{
+  margin-top:70px;
+  z-index : 1;
+  position:relative;
+}
+
+#filler{
+  background : #ddffcc;
+  height: 0px;
+  width: 200px;
+  position:absolute;
+  bottom:0;
+}
+
+#buttons button { 
+  background:#4da6ff; 
+  border:none; 
+  color:#fff; 
+  cursor:pointer; 
+  padding:5px; 
+  width:70px; 
+  margin:10px auto;
+  font-size:11px;
+  height : 25px;
+  border-radius : 50px;
+}
+
+#buttons button#work{
+ background: #009688 	
+}
+#buttons button#shortBreak{
+  background : #58668b     ;
+}
+
+#buttons button#longBreak{
+  background : #1e1f26;
+}
+
+#buttons button#stop{
+  background : #f00;
+}
