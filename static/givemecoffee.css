@@ -178,3 +178,8 @@ body[light-mode=dark] .light-mode-button span:nth-child(2) {
   background : #f00;
 }
 
+h6{
+float:right;
+font-size:9px;
+padding-right:10px;
+}
