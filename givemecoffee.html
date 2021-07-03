@@ -6,9 +6,8 @@
 <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <link href="https://fonts.googleapis.com/css?family=Bitter|Sedgwick+Ave+Display" rel="stylesheet">
-<head>
-<body onload="startTime()">
-
+ </head>
+<body>
 <script>
 function toggle_light_mode() {
     var app = document.getElementsByTagName("BODY")[0];
@@ -20,7 +19,9 @@ function toggle_light_mode() {
 	app.setAttribute("light-mode", "dark");
     }
 var element = document.body;
-   element.classList.toggle("dark-mode");	
+   element.classList.toggle("dark-mode");
+var element1 = document.body;
+   element1.classList.toggle("dark-mode2");   
 }
 window.addEventListener("storage", function () {
     if (localStorage.lightMode == "dark") {
@@ -29,22 +30,8 @@ window.addEventListener("storage", function () {
 	    app.setAttribute("light-mode", "light");
 	}
 }, false);
-function startTime() {
-  const today = new Date();
-  let h = today.getHours();
-  let m = today.getMinutes();
-  let s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
-  setTimeout(startTime, 1000);
-}
-
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
 </script>
+
 <script>
 var pomodoro = {
     started : false,
@@ -128,10 +115,41 @@ var pomodoro = {
       this.fillerHeight = 0;
     }
 };
+
+function showTime1() {
+    
+    'use strict';
+    
+    var now = new Date(),
+        
+        hours = now.getHours(),
+        
+        minutes = now.getMinutes(),
+        
+        seconds = now.getSeconds();
+    
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    
+    document.getElementById('clock').textContent = hours + ":" + minutes + ":" + seconds;
+    
+}
+ 
 window.onload = function(){
   pomodoro.init();
+  setInterval(showTime1, 500);
 };
 </script>
+
 
 
     <div class="container" align="right">
@@ -145,14 +163,18 @@ window.onload = function(){
 	</p>
 	</button> 
     </div>
+
 <div id="music">
-<h1>Study & Chill&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="txt"></span></h1>
+
+<h1>Study & Chill&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id ="clock"></span>
+</h1>
 <p>Take a seat and study with me</p>
 </div>
-<div id="pomodoro-app">
+
 <span>
 <p>
-<iframe src="https://open.spotify.com/embed/playlist/471N195f5jAVs086lzYglw" width="250" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></html>
+<iframe id="l" src="https://open.spotify.com/embed/playlist/471N195f5jAVs086lzYglw" width="250" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe></html>
+<div id="pomodoro-app">
   <div id="container">
     <div id="timer">
       <div id="time">
@@ -171,6 +193,7 @@ window.onload = function(){
     </div>
   </div>
 </div>
+
 </p>
 </span>
 </body>

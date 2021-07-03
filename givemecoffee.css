@@ -71,13 +71,15 @@ body[light-mode=dark] .light-mode-button span:nth-child(2) {
 
 
 
-iframe{float:left}
+#l{float:left}
+
 #container{
   width:400px;
   margin:20px auto;
   padding:20px;
   text-align:center;
   background : transparent;
+  
   
 }
 
@@ -97,8 +99,7 @@ iframe{float:left}
   user-select: none;
   cursor:default;
 }
-
-.dark-mode #timer{
+.dark-mode2 #timer{
   color:#ced4e2 ; 
   font-size:50px; 
   margin:10px auto;
@@ -114,6 +115,27 @@ iframe{float:left}
   user-select: none;
   cursor:default;
 }
+#clock {
+	background: transparent;
+    width:400px;
+    height:1px;
+    border-radius:5px;
+    color:black;
+    text-align:center;
+	font-size:40px;
+	padding-left:35px}
+.dark-mode #clock{
+	background: transparent;
+    width:400px;
+    height:1px;
+    border-radius:5px;
+    color:white;
+    text-align:center;
+	font-size:40px;
+	padding-left:35px
+	
+}
+
 #time{
   margin-top:70px;
   z-index : 1;
@@ -155,3 +177,4 @@ iframe{float:left}
 #buttons button#stop{
   background : #f00;
 }
+
