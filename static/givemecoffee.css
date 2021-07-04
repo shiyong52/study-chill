@@ -190,3 +190,9 @@ padding-right:10px;
     margin: 0 auto; 
     padding: 18px; 
 }
+#pic{
+	float:right;
+	height:auto;
+	width:350px;
+	padding-right:15px;
+}
