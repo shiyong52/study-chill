@@ -183,3 +183,10 @@ float:right;
 font-size:9px;
 padding-right:10px;
 }
+
+#disqus_thread { 
+    width: 640px;
+    max-width: 100%;
+    margin: 0 auto; 
+    padding: 18px; 
+}
